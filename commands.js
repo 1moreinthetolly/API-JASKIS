@@ -355,3 +355,14 @@ db.bounties.deleteMany({ client: "Songbird" })
   deletedCount: 3
 }
 // 4. Update all captured statuses to true
+db.bounties.updateMany(
+	{ captured: false },
+  { $set: { captured: true } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
